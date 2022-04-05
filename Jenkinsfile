@@ -8,7 +8,7 @@
 //Declarative pipeline
 pipeline {
 	//agent any
-	agent label { 
+	agent{ 
 		docker { image 'maven:3.6.3'}
 	}
 	stages{
