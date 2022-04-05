@@ -7,16 +7,17 @@
 
 //Declarative pipeline
 pipeline {
-	//agent any
-	agent{ 
-		docker { image 'node:current-alpine3.15'}
-	}
+	agent any
+	// agent{ 
+	// 	docker { image 'node:current-alpine3.15'}
+	// }
 	stages{
 		stage('Build'){
 			steps{
-				sh "node --version"
 				echo "Build"
-
+				echo "PATH - $PATH"
+				echo "BUILD_NUMBER - $env.BUILD_NUMBER"
+				echo "JOB_NAME - $env.JOB_NAME"
 			}
 		}
 		stage('Test'){
